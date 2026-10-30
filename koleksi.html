@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1d3027" />
+    <meta name="description" content="Jelajahi koleksi Zoos ART dalam ruang pamer digital dan temukan cerita di balik setiap benda." />
+    <title>Ruang Koleksi — Zoos ART</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Libre+Caslon+Display&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="koleksi.css" />
+    <script src="data.js" defer></script>
+    <script src="common.js" defer></script>
+    <script src="koleksi.js" defer></script>
+  </head>
+  <body>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" /></symbol>
+      <symbol id="icon-arrow-diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11" /></symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 4 4" /></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19" /></symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" /></symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-8 8 8.6 8.6 0 0 1-3.5-.8L4 20l1.3-4.3A8 8 0 1 1 20 11.5Z" /><path d="M8.5 11.5h7M8.5 14.5h4" /></symbol>
+    </svg>
+
+    <div class="announcement"><div class="announcement-inner page-width"><span><span class="announcement-star">✳</span> SELAMAT DATANG DI ZOOS ART</span><span class="announcement-right">A little piece of the past, made for today.</span></div></div>
+    <header class="site-header" id="atas">
+      <div class="header-inner page-width">
+        <a class="brand" href="index.html#beranda" aria-label="Zoos ART, kembali ke beranda"><span class="brand-mark" aria-hidden="true">Z<span>.</span></span><span class="brand-wordmark"><strong>ZOOS<span>ART</span></strong><small>THE ANTIQUE GALLERY</small></span></a>
+        <nav class="main-nav" id="main-nav" aria-label="Navigasi utama">
+          <a href="index.html#beranda">Beranda</a><a href="koleksi.html" aria-current="page">Koleksi</a><a href="index.html#cerita">Cerita Kami</a><a href="index.html#cara-memiliki">Cara Memiliki</a>
+        </nav>
+        <div class="header-actions">
+          <a class="search-trigger icon-button" href="index.html#koleksi" aria-label="Cari koleksi"><svg class="icon"><use href="#icon-search"></use></svg></a>
+          <button class="header-contact" type="button" data-contact>Hubungi Kami <span>↗</span></button>
+          <button class="menu-toggle icon-button" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="main-nav"><svg class="icon menu-open-icon"><use href="#icon-menu"></use></svg><svg class="icon menu-close-icon"><use href="#icon-close"></use></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="exhibition-stage" aria-labelledby="exhibition-title">
+        <div class="page-width exhibition-heading">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> THE DIGITAL MUSEUM &nbsp; / &nbsp; 01</p><h1 id="exhibition-title">Ruang yang menyimpan <em>cerita.</em></h1></div>
+          <p>Selamat datang di ruang koleksi kami. Geser dan pilih sebuah benda, lalu temukan cerita di baliknya.</p>
+        </div>
+        <div class="rail-indicator" aria-hidden="true"><span>KOLEKSI TERPILIH</span><i></i></div>
+        <div class="exhibit-rail" id="exhibit-rail" role="region" aria-label="Daftar koleksi. Geser ke kiri atau kanan, atau gunakan tombol panah." tabindex="0"></div>
+        <div class="stage-bottom page-width">
+          <p><span>↔</span> GESER UNTUK MENJELAJAHI</p>
+          <p class="stage-count"><strong id="stage-current">01</strong><span></span><span id="stage-total">00</span></p>
+          <div class="stage-arrows"><button type="button" id="previous-exhibit" aria-label="Koleksi sebelumnya"><svg class="icon"><use href="#icon-arrow"></use></svg></button><button type="button" id="next-exhibit" aria-label="Koleksi berikutnya"><svg class="icon"><use href="#icon-arrow"></use></svg></button></div>
+        </div>
+        <noscript><p class="stage-noscript">Aktifkan JavaScript untuk menjelajahi ruang koleksi ini.</p></noscript>
+      </section>
+
+      <article class="exhibit-detail" aria-labelledby="object-title">
+        <div class="object-presentation page-width">
+          <div class="object-heading">
+            <div><p class="eyebrow dark-eyebrow"><span class="eyebrow-line"></span> KOLEKSI TERPILIH &nbsp; / &nbsp; <span id="object-code"></span></p><h2 id="object-title"></h2></div>
+            <p id="object-description"></p>
+          </div>
+          <div class="object-photo-stage">
+            <div class="object-photo-background" id="object-photo-background" aria-hidden="true"></div>
+            <span class="object-stage-side" aria-hidden="true">ZOOS ART &nbsp; / &nbsp; OBJECTS WITH A PAST</span>
+            <div class="object-photo-frame"><img id="object-image" alt="" /></div>
+            <div class="object-stage-caption"><span>THE ZOOS ART COLLECTION</span><span>LUANGKAN WAKTU UNTUK MENGAMATI &nbsp; ✳</span></div>
+          </div>
+          <div class="object-plaque"><div><span>OBJECT / <span id="plaque-code"></span></span><strong id="plaque-title"></strong></div><div><span>KATEGORI</span><strong id="plaque-category"></strong></div><a href="#riwayat">LANJUTKAN CERITA <span>↓</span></a></div>
+        </div>
+
+        <section class="object-story-panel" id="riwayat" aria-labelledby="history-title">
+          <div class="object-story page-width">
+            <div class="object-story-heading"><p class="eyebrow dark-eyebrow"><span class="eyebrow-line"></span> THE STORY &nbsp; / &nbsp; 02</p><h2 id="history-title">Setiap benda, <em>sebuah cerita.</em></h2><span class="story-signature">✳</span></div>
+            <div class="object-story-text"><p class="story-kicker">DI BALIK KOLEKSI</p><div id="object-history"></div><p class="example-note">Cerita ini adalah ilustrasi untuk contoh koleksi. Riwayat dan asal barang dapat dilengkapi dengan informasi aslinya.</p><dl class="object-facts"><div><dt>KATEGORI</dt><dd id="fact-category"></dd></div><div><dt>PERIODE</dt><dd id="fact-period"></dd></div><div><dt>ASAL</dt><dd id="fact-origin"></dd></div></dl></div>
+          </div>
+        </section>
+
+        <section class="object-gallery" aria-labelledby="gallery-title">
+          <div class="page-width">
+            <div class="section-heading gallery-heading"><div><p class="eyebrow dark-eyebrow"><span class="eyebrow-line"></span> A CLOSER LOOK &nbsp; / &nbsp; 03</p><h2 id="gallery-title">Lihat lebih <em>dekat.</em></h2></div><p>Karena keindahan juga hadir dalam detail. Luangkan waktu untuk melihat lebih dekat.</p></div>
+            <div class="detail-gallery" id="detail-gallery"></div>
+            <p class="gallery-example-note" id="gallery-example-note">Foto detail ini menggunakan potongan foto contoh. Foto dari sudut lain dapat ditambahkan untuk koleksi asli.</p>
+          </div>
+        </section>
+
+        <section class="order-section" id="pemesanan" aria-labelledby="order-title">
+          <div class="page-width order-inner"><div class="order-copy"><p class="eyebrow"><span class="eyebrow-line"></span> MAKE IT YOURS &nbsp; / &nbsp; 04</p><h2 id="order-title">Tertarik melanjutkan <em>ceritanya?</em></h2><p>Jika benda ini terasa tepat untuk Anda, mari berbincang. Kami siap membantu menjawab pertanyaan tentang koleksi dan cara memilikinya.</p></div><div class="order-card"><span class="order-label">INFORMASI PEMESANAN</span><h3 id="order-product"></h3><div class="order-row"><span>HARGA</span><strong>Atas permintaan</strong></div><div class="order-row"><span>KODE KOLEKSI</span><strong id="order-code"></strong></div><p>Hubungi kami untuk menanyakan detail, harga, dan ketersediaan koleksi.</p><button class="button button-gold" id="order-contact" type="button">Tanyakan Koleksi Ini <svg class="icon"><use href="#icon-arrow"></use></svg></button></div></div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer"><div class="page-width"><div class="footer-main"><div class="footer-about"><a class="brand footer-brand" href="index.html#beranda" aria-label="Zoos ART, kembali ke beranda"><span class="brand-mark" aria-hidden="true">Z<span>.</span></span><span class="brand-wordmark"><strong>ZOOS<span>ART</span></strong><small>THE ANTIQUE GALLERY</small></span></a><p>Merayakan cerita masa lalu,<br />untuk ruang dan cerita yang baru.</p></div><div class="footer-links"><p>JELAJAHI</p><a href="koleksi.html">Koleksi</a><a href="index.html#cerita">Cerita Kami</a><a href="index.html#cara-memiliki">Cara Memiliki</a></div><div class="footer-links"><p>MARI BERBINCANG</p><button type="button" data-contact>Hubungi Zoos ART ↗</button><span>Untuk setiap benda yang<br />punya cerita.</span></div><a class="back-to-top" href="#atas" aria-label="Kembali ke atas">↑</a></div><div class="footer-bottom"><span>© <span id="year"></span> ZOOS ART. ALL RIGHTS RESERVED.</span><span>MADE FOR THE LOVE OF OLD THINGS &nbsp; ✳</span></div></div></footer>
+
+    <dialog class="modal contact-modal" id="contact-dialog" aria-labelledby="contact-dialog-title"><button class="modal-close icon-button" type="button" data-close-dialog aria-label="Tutup formulir kontak"><svg class="icon"><use href="#icon-close"></use></svg></button><p class="eyebrow dark-eyebrow"><span class="eyebrow-line"></span> SAY HELLO</p><h2 id="contact-dialog-title">Mari <em>berbincang.</em></h2><p class="contact-intro">Punya pertanyaan tentang koleksi kami? Tulis pesan Anda di bawah ini.</p><label class="message-label" for="contact-message">PESAN ANDA</label><textarea id="contact-message" rows="5" maxlength="1000"></textarea><p class="contact-config-note" id="contact-config-note" hidden>Nomor WhatsApp toko belum diatur. Anda dapat menyalin pesan untuk dikirim setelah kontak toko tersedia.</p><div class="contact-modal-actions"><a class="button button-dark" id="whatsapp-link" target="_blank" rel="noopener noreferrer" hidden>Kirim via WhatsApp <svg class="icon"><use href="#icon-arrow-diagonal"></use></svg></a><button class="button button-outline-dark" id="copy-message" type="button">Salin Pesan <svg class="icon"><use href="#icon-message"></use></svg></button></div><p class="copy-status" id="copy-status" role="status"></p></dialog>
+    <p class="sr-only" id="selection-announcement" aria-live="polite"></p>
+  </body>
+</html>
